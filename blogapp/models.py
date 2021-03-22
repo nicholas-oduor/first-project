@@ -20,3 +20,4 @@ class Blog(models.Model):
     post = models.TextField()
     editor = models.ForeignKey(Editor)
     tags = models.ManyToManyField(tags)
+    pub_date = models.DateTimeField(auto_now_add=True)
