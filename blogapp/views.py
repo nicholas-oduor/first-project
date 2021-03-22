@@ -45,3 +45,10 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
+
+def blog(request,blog_id):
+    try:
+        blog = blog.objects.get(id = blog_id)
+    except DoesNotExist:
+        raise Http404()
+    return render(request,"all-news/blog.html", {"blog":blog})
