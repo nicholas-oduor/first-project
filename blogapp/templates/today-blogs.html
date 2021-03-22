@@ -8,11 +8,16 @@
   {% for blogs_item in blogs %}
 
   <div class="row">
-    <!-- displaying blogs articles -->
+    <!-- displaying blogs blogs -->
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
       <h2 class="text-center"> {{ blogs_item.title }} </h2>
       <p class="text-center"> {{ blogs_item.post }} </p>
     </div>
+
+    <!--Display news blog images  -->
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <img src="{{news_item.blog_image.url}}" class="img-responsive" alt="Image">
+      </div>
 
   </div>
 

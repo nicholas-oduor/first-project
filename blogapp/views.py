@@ -30,3 +30,18 @@ def past_days_blogs(request, past_date):
 
     blogs = Blog.days_blogs(date)
     return render(request, 'past-blogs.html',{"date": date,"blogs":blogs})
+
+
+
+def search_results(request):
+
+    if 'blog' in request.GET and request.GET["blog"]:
+        search_term = request.GET.get("blog")
+        searched_blogs = Blog.search_by_title(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"message":message,"blogs": searched_blogs})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message})

@@ -33,6 +33,7 @@ class Blog(models.Model):
     editor = models.ForeignKey(Editor, on_delete=models.CASCADE)
     tags = models.ManyToManyField(tags)
     pub_date = models.DateTimeField(auto_now_add=True)
+    blog_image = models.ImageField(upload_to = 'blogs/')
 
     @classmethod
     def todays_blogs(cls):
@@ -43,4 +44,9 @@ class Blog(models.Model):
     @classmethod
     def days_blogs(cls,date):
         blogs = cls.objects.filter(pub_date__date = date)
+        return blogs
+
+    @classmethod
+    def search_by_title(cls,search_term):
+        blogs = cls.objects.filter(title__icontains=search_term)
         return blogs
