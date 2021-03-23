@@ -37,3 +37,5 @@ To fix a bug or enhance an existing module, follow these steps:
 - Nicholas Oduor
 
 [MIT](https://github.com/nicholas-oduor/first-project/blob/master/LICENSE.md
+
+ © [Nicholas Oduor](https://github.com/nicholas-oduor/first-project)
